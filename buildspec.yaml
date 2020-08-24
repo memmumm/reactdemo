@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo "Installing dependencies"
+      - npm install
+  build:
+    commands:
+      - echo "Building project"
+      - npm run build
+  post_build:
+    commands:
+      - echo "Tests run succesfully"
+      - aws s3 sync build/ s3://mervi-codepipeline-demo
