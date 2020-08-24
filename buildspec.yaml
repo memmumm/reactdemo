@@ -12,5 +12,5 @@ phases:
       - npm run build
   post_build:
     commands:
-      - echo "Tests run succesfully"
+      - echo "All run succesfully"
       - aws s3 sync build/ s3://mervi-codepipeline-demo
